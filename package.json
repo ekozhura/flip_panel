@@ -1,0 +1,19 @@
+{
+  "name": "components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tpl": "./node_modules/handlebars/bin/handlebars ./src/templates/*.hbs -f compiled/tpls.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backbone": "^1.2.3",
+    "handlebars": "^4.0.5",
+    "jquery": "^2.1.4",
+    "underscore": "^1.8.3"
+  }
+}
