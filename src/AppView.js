@@ -23,8 +23,9 @@ var AppView = Backbone.View.extend({
       data: { }
     });
     firstPanel.$el.addClass('flipped-back');
-    firstPanel.bind("flip", this.flip.bind(this, firstPanel, secondPanel));
-    secondPanel.bind("flip", this.flip.bind(this, secondPanel, errorPanel));
+    firstPanel.bind("button-click", this.flip.bind(this, firstPanel, secondPanel));
+    secondPanel.bind("button-click", this.flip.bind(this, secondPanel, errorPanel));
+    errorPanel.bind("panel-click", this.flip.bind(this, errorPanel, firstPanel));
   },
   flip: function(curr, next) {
     if(!this.flipped) {
@@ -48,7 +49,10 @@ var PanelView = Backbone.View.extend({
   },
   events: {
     "click .next": function() {
-      this.trigger("flip");
+      this.trigger("button-click");
+    },
+    "click": function() {
+      this.trigger("panel-click");
     }
   },
   initialize: function(opts) {
