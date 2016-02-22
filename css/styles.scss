@@ -1,0 +1,94 @@
+.container {
+  width: 300px;
+  height: 442px;
+}
+.container {
+  perspective: 1000;
+}
+.container.flip .flipper {
+  transform: rotateY(180deg);
+}
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.panel {
+  border: 1px solid black;
+  background: grey;
+  display: none;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.flipped-back {
+  display: block;
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+.flipped-front {
+  display: block;
+  transform: rotateY(180deg);
+}
+.panel {
+  text-align: center;
+  width: 280px;
+  height: 422px;
+  background: #fcfcfc;
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.panel-first .next, .panel-second .done, .panel-third .close {
+  width: 280px;
+  height: 50px;
+  border-radius: 3px;
+  border: 0px; 
+  font-size: 20px;
+  font-family: "OpenSans", sans-serif;
+  color: #ffffff;
+  bottom: 10px;
+  left: 10px;
+  position: absolute;
+}
+.panel-first .next {
+  background-color: #2a3d53;
+}
+.panel-second .done {
+  background-color: #ff9800;
+}
+.panel-third .close {
+  border: solid 1px #ff9800;
+  background: #fcfcfc;
+  color: #ff9800;
+}
+.panel-first h2, .panel-second h2, .panel-third h2, .panel-error h2 {
+  padding: 0;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 300;
+  font-family: "OpenSans-Light", sans-serif;
+  color: #2a3d53;
+}
+.panel-error h2 {
+  color: #d0021b;
+}
+.line {
+  width: 280px;
+  height: 1px;
+  border-bottom: solid 1px #d8d8d8;
+}
+.panel-custom {
+  display: block;
+}
+
+.panel-custom.isFlipped {
+  transform: rotateY(180deg);
+}
+.panel-custom.isHidden {
+  transform: rotateY(180deg);
+}
+.flipper :first-child {
+  z-index: 2;
+}

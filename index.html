@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="compiled/main.css"/>
   </head>
   <body>
     <div id="app"></div>
@@ -11,8 +11,17 @@
     <script type="text/javascript" src="node_modules/backbone/backbone.js"></script>
     <script type="text/javascript" src="node_modules/handlebars/dist/handlebars.js"></script>
 
-    <script type="text/javascript" src="src/AppView.js"></script>
+
+    <script type="text/javascript">
     
+    var ns = { app: {} }, app = {};
+
+    $(document).ready(function() {
+      app = ns.app.init('#app');
+    });
+
+    </script>
+    <script type="text/javascript" src="src/AppView.js"></script>
     <!-- handlebars templates -->
     <script type="text/javascript" src="compiled/tpls.js"></script>
   </body>

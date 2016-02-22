@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tpl": "./node_modules/.bin/handlebars ./src/templates/*.hbs -f compiled/tpls.js",
+    "tpl": "./node_modules/.bin/handlebars ./src/*/*.hbs -f ./compiled/tpls.js",
+    "sass": "./node_modules/.bin/node-sass --include-path scss css/styles.scss ./compiled/main.css",
     "preview": "./node_modules/.bin/hs -p 9001"
   },
   "keywords": [],
@@ -18,6 +19,7 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "http-server": "^0.8.5"
+    "http-server": "^0.8.5",
+    "node-sass": "^3.4.2"
   }
 }
